@@ -22,3 +22,11 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### pagine solo per esempi ###
+esempi.html
+components.html
+navbar-transparent.html
+notification.html
+template.html
+tutorial.html
