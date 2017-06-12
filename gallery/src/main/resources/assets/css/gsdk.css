@@ -1383,6 +1383,9 @@ input.ct-red + span + label + span.switch-right {
 
 .navbar-ct-green {
   background-color: rgba(76, 217, 100, 0.98); }
+  
+.navbar-ct-black {
+  background-color: rgba(43, 43, 40, 0.98); }
 
 .navbar-ct-orange {
   background-color: rgba(255, 149, 0, 0.98); }
