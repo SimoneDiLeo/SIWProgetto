@@ -9,12 +9,12 @@ public class MainController {
 
 	@RequestMapping("/login")
 	public String login() {
-		return "login";
+		return "loginAmministratore";
 	}
 
 	@RequestMapping("/login-error.html")
 	public String loginError(Model model) {
 		model.addAttribute("loginError", true);
-		return "login";
+		return "loginAmministratore";
 	}
 }

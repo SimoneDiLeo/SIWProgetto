@@ -12,10 +12,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
- 
-    @Autowired
-    private DataSource dataSource;
- 
+
+	@Autowired
+	private DataSource dataSource;
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -23,13 +23,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usersByUsernameQuery("select username,password, enabled from users where username=?")
 		.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
 	}
- 
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/home").permitAll().antMatchers("/admin").hasRole("ADMIN")
-				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-				.permitAll();
-		http.exceptionHandling().accessDeniedPage("/403");
-	}
- 
+		http.authorizeRequests().anyRequest().permitAll().antMatchers("/admin").hasRole("ADMIN").anyRequest().permitAll();	}
+
+
 }
