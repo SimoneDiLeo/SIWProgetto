@@ -12,6 +12,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Autore {
 	//TODO oncascade del cancella (cancello autore->cancello opere)
@@ -36,7 +39,8 @@ public class Autore {
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
 
-	@OneToMany
+	@OneToMany(mappedBy="autore")
+	@Cascade({CascadeType.DELETE})
 	private List<Opera> opere;
 
 
