@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8" />
 <link rel="apple-touch-icon" sizes="76x76"
-	href="assets/img/apple-icon.png"/>
-<link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+	href="assets/img/apple-icon.png" />
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Siw Gallery - Inserimento Opera</title>
+<title>Siw Gallery - Dettaglio Opera</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -20,8 +20,9 @@
 <link href="assets/css/demo.css" rel="stylesheet" />
 <link href="assets/css/siwStyle.css" rel="stylesheet" />
 <!--     Font Awesome     -->
-<link href="bootstrap3/css/font-awesome.css" rel="stylesheet"/>
-<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'/>
+<link href="bootstrap3/css/font-awesome.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel'
+	rel='stylesheet' type='text/css' />
 
 </head>
 
@@ -66,9 +67,9 @@
 				<div class="border">Dettaglio Opera</div>
 			</div>
 			<div class="img-src"
-				style="background-image: url('assets/img/scuola-Atene.jpg')"></div>
+				style="background-image: url('assets/img/dettaglioOpera.jpg')"></div>
 			<div class='img-src blur'
-				style="background-image: url('assets/img/scuola-Atene.jpg')"></div>
+				style="background-image: url('assets/img/dettaglioOpera.jpg')"></div>
 		</div>
 
 	</div>
@@ -76,19 +77,35 @@
 	<div class="main">
 		<div class="container tim-container">
 			<h1 class="text-center">
-				Registrazione Nuovo Opera<small class="subtitle">Inserire
-					Caratteristiche</small>
+				Dettalgio dell'opera<small class="subtitle">Caratteristiche</small>
 			</h1>
+			<div class="row">
+				<div class="col">
+					<img src="assets/img/dettaglioOpera.jpg" alt="Rounded Image" class="img-rounded">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 col-6">
+                <div class="tim-typo">
+                    <h3>Titolo: <span th:text="${opera.titolo}">titolo</span></h3>
+                    <h3>Anno: <span th:text="${opera.anno}">anno</span></h3>
+                    <h3>Dimensioni: <span th:text="${opera.dimensioni}">dimensioni</span></h3>
+                    <h3>Tecnica: <span th:text="${opera.tecnica}">tecnica</span></h3>
+                    <h3>Artista: <span th:text="${opera.artista.nome}">artista</span></h3>
+                                                       					
+				</div>
+			</div>	
+			</div>
 		</div>
+	  <div class="space"></div>	
 	</div>
 	
 	<div class="footer">
 		<div class="overlayer">
 			<div class="container">
 				<div class="row">
-					<div class="credits">
-						&copy; Progetto Sistemi Informativi Su Web || Di Leo Simone - Catalli Lorenzo
-					</div>
+					<div class="credits">&copy; Progetto Sistemi Informativi Su
+						Web || Di Leo Simone - Catalli Lorenzo</div>
 				</div>
 			</div>
 		</div>
