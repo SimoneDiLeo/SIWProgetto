@@ -44,7 +44,9 @@ public class Autore {
 	private List<Opera> opere;
 
 
-
+	public Autore(){
+		
+	}
 
 	public Autore(String nome,String cognome,String nazionalita,Date dataNascita){
 		this.nome=nome;
