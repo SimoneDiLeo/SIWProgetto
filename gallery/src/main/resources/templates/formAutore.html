@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Siw Gallery - Pagina Amministratore</title>
+<title>Siw Gallery - Inserimento Autore</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -28,7 +28,9 @@
 <body>
 	<div id="navbar-full">
 		<div class="container">
-			<nav class="navbar navbar-ct-black navbar-transparent navbar-fixed-top" role="navigation">
+			<nav
+				class="navbar navbar-ct-black navbar-transparent navbar-fixed-top"
+				role="navigation">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -61,12 +63,12 @@
 
 		<div class='blurred-container'>
 			<div class="motto">
-				<div class="border">Gestione Galleria</div>
+				<div class="border">Inserimento Autore</div>
 			</div>
 			<div class="img-src"
-				style="background-image: url('assets/img/monet.jpg')"></div>
+				style="background-image: url('assets/img/scuola-Atene.jpg')"></div>
 			<div class='img-src blur'
-				style="background-image: url('assets/img/monet.jpg')"></div>
+				style="background-image: url('assets/img/scuola-Atene.jpg')"></div>
 		</div>
 
 	</div>
@@ -74,9 +76,36 @@
 	<div class="main">
 		<div class="container tim-container">
 			<h1 class="text-center">
-				Login Amministratore<small class="subtitle">Inserire
+				Registrazione Nuovo Autore<small class="subtitle">Inserire
 					Credenziali</small>
 			</h1>
+
+			<form action="#" th:action="@{/autore}" method="post">
+
+				<label for="nome">Nome</label> 
+				<input type="text" class="form-control" id="nome" name="nome" /> 
+				<span th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}">Error</span><br><br>
+
+				<label for="cognome">Cognome</label> 
+				<input type="text" class="form-control" id="cognome" name="cognome" /> 
+				<span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">Error</span><br><br>
+
+				<label for="nazionalita">Nazionalità</label> 
+				<input type="text" class="form-control" id="nazionalita" name="nazionalita" /> 
+				<span th:if="${#fields.hasErrors('nazionalita')}" th:text="#{label.mandatory}">Error</span><br><br>
+
+				<label for="dataNascita">Data di Nascita</label> 
+				<input type="text" class="form-control" id="dataNascita" name="dataNascita" />
+				<span th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.mandatory}">Error</span><br><br>
+				
+				<label for="dataMorte">Data di Morte</label> 
+				<input type="dataMorte" class="form-control" id="dataMorte" name="dataMorte" />
+				<span th:if="${#fields.hasErrors('dataMorte')}" th:text="#{label.mandatory}">Error</span><br><br>
+				
+				<div class="form-actions"><br>
+					<button type="submit" class="btn btn-default btn-logIn">Inserisci</button>
+				</div>
+			</form>
 
 		</div>
 	</div>
