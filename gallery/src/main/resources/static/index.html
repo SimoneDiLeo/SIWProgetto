@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Siw Gallery - LogIn Amministratore</title>
+<title>Siw Gallery</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -48,11 +48,12 @@
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<!-- Inserisci elementi nella navbar -->
+							<li class="active"><a href="/prendiAllAutore">Autori in
+									esposizione</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
-							<!-- Inserisci elementi nella navbar -->
+							<li><a href="/login" class="btn btn-round btn-default">Amministratore</a></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -63,10 +64,13 @@
 		<!--  end container-->
 
 		<div class='blurred-container'>
+			<div class="motto">
+				<div class="border">Siw Gallery</div>
+			</div>
 			<div class="img-src"
-				style="background-image: url('assets/img/guernica.jpg')"></div>
+				style="background-image: url('assets/img/ultima-cena-siw.jpg')"></div>
 			<div class='img-src blur'
-				style="background-image: url('assets/img/guernica.jpg')"></div>
+				style="background-image: url('assets/img/ultima-cena-siw_blur.png')"></div>
 		</div>
 
 	</div>
@@ -74,24 +78,30 @@
 	<div class="main">
 		<div class="container tim-container">
 			<h1 class="text-center">
-				Login Amministratore<small class="subtitle">Inserire
-					Credenziali</small>
+				Progetto Sistemi Informativi Su Web<small class="subtitle">Progetto
+					Avanzato</small>
 			</h1>
-
-			<form action="#" th:action="@{/login}" method="post">
-				<label for="username">Username</label> <input type="text"
-					class="form-control" id="username" name="username" /> <label
-					for="password">Password</label> <input type="password"
-					class="form-control" id="password" name="password" />
-				<div class="form-actions">
-					<br>
-					<button type="submit" class="btn btn-default btn-logIn">Log
-						in</button>
-				</div>
-				<div th:if="${param.error}" class="alert alert-error">Invalid
-					username and password.</div>
-			</form>
-
+			<p>
+				Si vuole realizzare il sistema informativo su Web per la gestione di
+				una piccola galleria d’arte. <br>
+				<br>Possono accedere al sistema utenti generici e un
+				amministratore.L’amministratore, previa autenticazione, può inserire
+				e rimuovere le informazioni relative alle opere d’arte presenti
+				nella galleria; per semplicità supponiamo che le opere d’arte siano
+				quadri e che per ciascuno di essi siano di interesse il titolo,
+				l’anno in cui è stato realizzato, la tecnica, le dimensioni,
+				l’autore. <br>
+				<br> Dell’autore sono di interesse nome, cognome, nazionalità
+				data di nascita e data di morte.L’utente generico può accedere alle
+				informazioni della galleria attraverso diversi percorsi di
+				navigazione, opportunamente predisposti (ad esempio, per autore,
+				oppure per anno, etc.). <br>
+				<br> Completare ed estendere le specifiche a piacere dove si
+				ritiene necessario.Progettare il sistema, definendone casi d’uso,
+				class diagram (con indicazioni utili alla progettazione dello strato
+				di persistenza), schema della base di dati. Implementare almeno 4
+				casi d’uso.
+				<!--     end extras -->
 		</div>
 	</div>
 

@@ -31,6 +31,10 @@ public class Opera {
 	@ManyToOne
 	private Autore autore;
 
+	public Opera(){
+		
+	}
+	
 	public Opera(String titolo,Integer anno,String dimensioni,String tecnica,Autore autore){
 		this.titolo=titolo;
 		this.anno=anno;

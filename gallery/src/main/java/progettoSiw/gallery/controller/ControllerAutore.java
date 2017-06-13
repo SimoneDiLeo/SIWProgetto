@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
+import org.springframework.web.bind.annotation.PostMapping;
 import progettoSiw.gallery.model.Autore;
 import progettoSiw.gallery.service.AutoreService;
 
@@ -26,4 +26,20 @@ public class ControllerAutore {
     	model.addAttribute("autori",autori);
         return "listaAutori";
     }
+	
+	@PostMapping("/autore")
+    public String checkAutoreInfo(@Valid @ModelAttribute Autore Autore, 
+    									BindingResult bindingResult, Model model) {
+    	
+        if (bindingResult.hasErrors()) {
+            return "formAutore";
+        }
+        else {
+        	model.addAttribute(Autore);
+            autoreService.add(Autore); 
+        }
+        return "autoreInserito";
+    }
+	
+	
 }
