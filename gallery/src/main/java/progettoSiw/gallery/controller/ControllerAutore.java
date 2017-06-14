@@ -41,6 +41,12 @@ public class ControllerAutore {
 	}
 
 
+	@GetMapping("/autore")
+	public String getAutore(Model model,Long id) {
+		model.addAttribute("autore", this.autoreService.findbyId(id));
+		return "vistaAutore";
+	}
+	
 	@GetMapping("/formRimozioneAutore")
 	public String deleteAutore(Model model) {
 		model.addAttribute("autori", this.autoreService.findAll());

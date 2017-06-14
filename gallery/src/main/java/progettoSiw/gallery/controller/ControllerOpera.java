@@ -51,14 +51,6 @@ public class ControllerOpera {
         return "listaOpere";
     }
 	
-	@GetMapping("/prendiAutoreOpera")
-    public String operaAutore(@Valid @ModelAttribute Opera opera, 
-    									BindingResult bindingResult, Model model) {
-		
-		Autore autore=this.operaService.findAutoreOpera(opera.getId());
-		model.addAttribute("autore",autore);
-        return "vistaAutore";
-    }
 	
 	@GetMapping("/formRimozioneOpera")
 	public String deleteAutore(Model model) {
