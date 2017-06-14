@@ -24,7 +24,16 @@ public class ControllerOpera {
     @Autowired
 	private AutoreService autoreService;
     
-  @PostMapping("/opera")
+  
+
+	@GetMapping("/formOpera")
+	public String formOpera(Opera opera,Model model) {
+		Iterable<Autore> autori=this.autoreService.findAll();
+		model.addAttribute("autori",autori);
+		return "formOpera";
+	}
+	
+    @PostMapping("/opera")
     public String checkOperaInfo(@Valid @ModelAttribute Opera Opera, 
     									BindingResult bindingResult, Model model,Long id) {
     	

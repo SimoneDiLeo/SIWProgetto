@@ -18,13 +18,9 @@ public class ControllerAutore {
 	@Autowired
 	private AutoreService autoreService; 
 
-
-	@GetMapping("/prendiAllAutore")
-	public String tutteOpere(@Valid @ModelAttribute Autore autore, 
-			BindingResult bindingResult, Model model) {
-		Iterable<Autore> autori=this.autoreService.findAll();
-		model.addAttribute("autori",autori);
-		return "listaAutori";
+	@GetMapping("/formAutore")
+	public String formAutore(Autore autore) {
+		return "formAutore";
 	}
 
 	@PostMapping("/autore")
