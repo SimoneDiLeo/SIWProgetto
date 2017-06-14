@@ -80,21 +80,17 @@
 				Dettalgio dell'opera<small class="subtitle">Caratteristiche</small>
 			</h1>
 			<div class="row">
-				<div class="col">
-					<img src="assets/img/dettaglioOpera.jpg" alt="Rounded Image" class="img-rounded">
+				<div class="col-md-4 col-sm-4">
+					<img src="assets/img/noimagefound.jpg" alt="Rounded Image" class="img-rounded"/>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-6 col-6">
-                <div class="tim-typo">
-                    <h3>Titolo: <span th:text="${opera.titolo}">titolo</span></h3>
-                    <h3>Anno: <span th:text="${opera.anno}">anno</span></h3>
-                    <h3>Dimensioni: <span th:text="${opera.dimensioni}">dimensioni</span></h3>
-                    <h3>Tecnica: <span th:text="${opera.tecnica}">tecnica</span></h3>
-                    <h3>Artista: <span th:text="${opera.artista.nome}">artista</span></h3>
-                                                       					
-				</div>
-			</div>	
+				<div class="col-md-4 col-sm-4">
+                	<div class="tim-typo">
+                    	<h3>Titolo: <b><span th:text="${opera.titolo}">titolo</span></b></h3>
+	                    <h3>Anno: <b><span th:text="${opera.anno}">anno</span></b></h3>
+	                    <h3>Dim: <b><span th:text="${opera.dimensioni}">111x222</span></b></h3>
+	                    <h3>Tecnica: <b><span th:text="${opera.tecnica}">tecnica</span></b></h3>                                                   					
+					</div>
+				</div>	
 			</div>
 		</div>
 	  <div class="space"></div>	
