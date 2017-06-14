@@ -31,7 +31,6 @@ public class ControllerAmministrazione {
 	
 	@GetMapping("/formRimozione")
     public String formRimozione(Model model) {
-		//TODO reindirizzamento e modello da mettere a disp
 		Iterable<Autore> autori=this.autoreService.findAll();
     	model.addAttribute("autori",autori);
         return "listaAutori";
