@@ -98,9 +98,15 @@
 				<input type="text" class="form-control" id="tecnica" name="tecnica" />
 				<span th:if="${#fields.hasErrors('tecnica')}" th:text="#{label.mandatory}">Error</span><br></br><br></br>
 				
-				<label for="autore">Autore</label> 
-				<input type="autore" class="form-control" id="autore" name="autore" />
-				<span th:if="${#fields.hasErrors('autore')}" th:text="#{label.mandatory}">Error</span><br></br><br></br>
+				<label for="autore">Autore</label>
+				<ul>
+					<div th:each="autore : ${autori}">
+						<li><label class="checkbox-inline">
+  							<input type="checkbox" id="autore" th:value="${autore.id}" th:text="${autore.cognome}" name="id"/>
+						</label>
+						</li>	
+					</div>
+				</ul>	
 
 				<label for="fileupload"> Foto Opera</label>
 				<input type="file" name="fileupload" value="fileupload" id="fileupload"/> 
