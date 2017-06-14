@@ -100,6 +100,9 @@
 									<h3>
 										Tecnica: <b><span th:text="${opera.tecnica}">tecnica</span></b>
 									</h3>
+									<h3>
+										Autore:  <a th:href="@{/autore/(id=${opera.autore.id})}"><b><span th:text="${opera.autore.cognome}">autore</span></b></a>
+									</h3>
 								</div>
 							</div>
 						</div>	
