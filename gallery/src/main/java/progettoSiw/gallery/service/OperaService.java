@@ -31,4 +31,8 @@ public class OperaService {
 	public Autore findAutoreOpera(long id ){
 		return this.findbyId(id).getAutore();
 	}
+
+	public void rimuoviOpera(Long id) {
+		this.OperaRepository.delete(id);	
+	}
 }

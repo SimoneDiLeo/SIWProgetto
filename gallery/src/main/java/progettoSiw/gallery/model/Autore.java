@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -23,13 +24,16 @@ public class Autore {
 	private Long id;
 
 	@NotNull
+	@Size(min=1)
 	private String nome;
 
 
 	@NotNull
+	@Size(min=1)
 	private String cognome;
 
 	@NotNull
+	@Size(min=1)
 	private String nazionalita;
 
 	@Temporal(TemporalType.DATE)

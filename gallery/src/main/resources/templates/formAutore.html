@@ -84,20 +84,25 @@
 
 				<label for="nome">Nome</label> 
 				<input type="text" class="form-control" id="nome" name="nome" /> 
+				<div></div>
 				<span th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}">Error</span>
-
+<div></div>
 				<label for="cognome">Cognome</label> 
 				<input type="text" class="form-control" id="cognome" name="cognome" /> 
+				<div></div>
 				<span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">Error</span>
-
+<div></div>
 				<label for="nazionalita">Nazionalità</label> 
 				<input type="text" class="form-control" id="nazionalita" name="nazionalita" /> 
+				<div></div>
 				<span th:if="${#fields.hasErrors('nazionalita')}" th:text="#{label.mandatory}">Error</span>
-
+<div></div>
 				<label for="dataNascita">Data di Nascita</label> 
 				<input type="text" class="form-control" id="dataNascita" name="dataNascita" />
+				<div></div>
 				<span th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.mandatory}">Error</span>
 				
+				<div></div>
 				<label for="dataMorte">Data di Morte</label> 
 				<input type="text" class="form-control" id="dataMorte" name="dataMorte" /><br></br>
 				<div class="form-actions">

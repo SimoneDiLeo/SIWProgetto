@@ -1,40 +1,48 @@
 package progettoSiw.gallery.model;
 
+import java.util.Base64;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Opera {
 	//TODO : inserire foto opera e gestione OneToMany/ManyToOne bidirezionale
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
+	@Size(min=1)
 	private String titolo;
-
 
 	@NotNull
 	private Integer anno;
 
 	@NotNull
+	@Size(min=1)
 	private String dimensioni;
 
 	@NotNull
+	@Size(min=1)
 	private String tecnica;
 
 	@ManyToOne
 	private Autore autore;
 
+
+	private byte[] imgOpera;
+
 	public Opera(){
-		
+
 	}
-	
+
 	public Opera(String titolo,Integer anno,String dimensioni,String tecnica,Autore autore){
 		this.titolo=titolo;
 		this.anno=anno;
@@ -89,6 +97,15 @@ public class Opera {
 
 	public void setAutore(Autore autore) {
 		this.autore = autore;
+	}
+
+	public String getImgOpera() {
+		String encoded = Base64.getEncoder().encodeToString(this.imgOpera);
+		return encoded;
+	}
+
+	public void setImgOpera(byte[] imgOpera) {
+		this.imgOpera = imgOpera;
 	}
 
 

@@ -31,5 +31,9 @@ public class AutoreService {
 		Autore a = this.autoreRepository.findOne(id);
 		return a.getOpere();
 	}
+	
+	public void rimuoviAutore(long id){
+		this.autoreRepository.delete(id);
+	}
 
 }
