@@ -88,11 +88,40 @@
 	                    <h3>Nome: <b><span th:text="${autore.nome}">nome</span></b></h3>
 	                    <h3>Anno: <b><span th:text="${autore.cognome}">cognome</span></b></h3>
 	                    <h3>Nazionalità: <b><span th:text="${autore.nazionalita}">naz</span></b></h3>
-	                    <h3>Data di morte: <b><span th:text="${autore.dataNascita}">data</span></b></h3>                                           					
-					    <h3>Data di nascita: <b><span th:text="${autore.dataNascita}">data </span></b></h3>                                           					
+	                    <h3>Data di nascita: <b><span th:text="${autore.dataNascita}">data</span></b></h3>                                           					
+					    <h3>Data di morte: <b><span th:text="${autore.dataMorte}">data </span></b></h3>                                           					
 					</div>
 				</div>	
-			</div>
+			</div><br></br>
+			<h2 class="text-center">
+				Opere dell'autore in esposizione
+			</h2>
+			<ul>			
+			<div th:each="opera : ${autore.opere}">
+					<li><div class="row">
+							<div class="col-md-4 col-sm-4">
+								<img src="assets/img/noimagefound.jpg" alt="Rounded Image" class="img-rounded"/>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<div class="tim-typo">
+									<h3>
+										Titolo: <b><span th:text="${opera.titolo}">titolo</span></b>
+									</h3>
+									<h3>
+										Anno: <b><span th:text="${opera.anno}">anno</span></b>
+									</h3>
+									<h3>
+										Dim: <b><span th:text="${opera.dimensioni}">dimensioni</span></b>
+									</h3>
+									<h3>
+										Tecnica: <b><span th:text="${opera.tecnica}">tecnica</span></b>
+									</h3>
+								</div>
+							</div>
+						</div>	
+					</li>
+				</div>	
+			</ul>			
 		</div>
 	  <div class="space"></div>
 	</div>
